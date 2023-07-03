@@ -2,7 +2,6 @@ package com.test.api.services;
 
 import com.test.api.dto.PostDTO;
 import com.test.api.exceptions.post.PostNotFoundException;
-import com.test.api.exceptions.user.UserNotFoundException;
 import com.test.api.mappers.PostMapper;
 import com.test.api.models.Post;
 import com.test.api.repositories.PostRepo;
@@ -32,9 +31,8 @@ public class PostService implements IPostService {
         return mapper.toDTO(post);
     }
 
-    @Override
-    public List<PostDTO> getListByUserId(Long id) throws PostNotFoundException {
-        var posts = repo.getAllByUserId(id);
+    public List<PostDTO> getListByUserName(String name) throws PostNotFoundException {
+        var posts = repo.getAllByUserName(name);
         if (posts == null)
             throw new PostNotFoundException("У этого пользователя еще нет постов.");
         return mapper.toListDTO(posts);

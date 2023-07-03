@@ -9,7 +9,7 @@ import java.util.List;
 public interface IPostService {
     PostDTO create(Post post);
     PostDTO getById(Long id) throws PostNotFoundException;
-    List<PostDTO> getListByUserId(Long id) throws PostNotFoundException;
+    List<PostDTO> getListByUserName(String name) throws PostNotFoundException;
     Long edit(Post newPost);
     Long delete(Long id);
 }

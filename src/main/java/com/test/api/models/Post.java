@@ -7,7 +7,7 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "post")
+@Table(name = "'post'")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

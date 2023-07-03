@@ -35,10 +35,11 @@ public class PostController {
         }
     }
 
-    @GetMapping
-    public ResponseEntity getAllPostByUserId(@RequestParam Long id) {
+    // TODO: исправить получение списка постов. Должно быть /user/posts
+    @GetMapping("/{username}")
+    public ResponseEntity getAllPostByUserName(@PathVariable String username) {
         try {
-            return ResponseEntity.ok(service.getListByUserId(id));
+            return ResponseEntity.ok(service.getListByUserName(username));
         } catch (PostNotFoundException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {

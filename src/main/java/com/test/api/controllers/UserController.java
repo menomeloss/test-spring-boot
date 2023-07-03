@@ -28,16 +28,6 @@ public class UserController {
             return ResponseEntity.badRequest().body("Ошибка! Наверно у нас что-то случилось хз");
         }
     }
-    @GetMapping
-    public ResponseEntity getUserById(@RequestParam Long id) {
-        try {
-            return ResponseEntity.ok(service.getById(id));
-        } catch (UserNotFoundException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        } catch(Exception e) {
-            return ResponseEntity.badRequest().body("Ошибка! Наверно у нас что-то случилось хз");
-        }
-    }
 
     @GetMapping
     public ResponseEntity geUserByName(@RequestParam String name) {
