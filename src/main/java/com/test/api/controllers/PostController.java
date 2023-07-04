@@ -35,7 +35,6 @@ public class PostController {
         }
     }
 
-    // TODO: исправить получение списка постов. Должно быть /user/posts
     @GetMapping("/{username}")
     public ResponseEntity getAllPostByUserName(@PathVariable String username) {
         try {
